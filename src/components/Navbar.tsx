@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import planetScholarsLogo from "@/assets/planet-scholars-logo.png";
+import planetScholarsLogo from "@/assets/planet-scholars-logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
