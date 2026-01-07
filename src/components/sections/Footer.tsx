@@ -1,16 +1,24 @@
-import { Code2 } from "lucide-react";
+import planetScholarsLogo from "@/assets/planet-scholars-logo.png";
+import youngThinksLogo from "@/assets/young-thinks-logo.png";
 
 const Footer = () => {
   return (
     <footer className="py-12 border-t border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold gradient-text">CodeFuture</span>
+          {/* Logos */}
+          <div className="flex items-center gap-6">
+            <img 
+              src={planetScholarsLogo} 
+              alt="Planet Scholars" 
+              className="h-14 w-auto"
+            />
+            <div className="h-10 w-px bg-border/50" />
+            <img 
+              src={youngThinksLogo} 
+              alt="Young Thinks - Parent Company" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Links */}
@@ -42,9 +50,9 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
-          <p>© 2025 CodeFuture. All rights reserved.</p>
+          <p>© 2025 Planet Scholars. A Young Thinks Venture.</p>
           <p className="mt-1">
-            Teaching AI, Coding & Computer Science to students in India & UK.
+            Teaching AI, Coding & Computer Science to students in USA, UK, Australia & Singapore.
           </p>
         </div>
       </div>

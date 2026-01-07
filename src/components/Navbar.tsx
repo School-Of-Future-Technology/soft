@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Code2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import planetScholarsLogo from "@/assets/planet-scholars-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,10 +19,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="text-lg font-bold gradient-text">CodeFuture</span>
+            <img 
+              src={planetScholarsLogo} 
+              alt="Planet Scholars" 
+              className="h-12 w-auto"
+            />
           </a>
 
           {/* Desktop Nav */}
