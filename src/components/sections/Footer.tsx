@@ -1,5 +1,5 @@
-import planetScholarsLogo from "@/assets/planet-scholars-logo.png";
-import youngThinksLogo from "@/assets/young-thinks-logo.png";
+import planetScholarsLogo from "@/assets/planet-scholars-logo.jpg";
+import youngThinksLogo from "@/assets/young-thinks-logo.jpg";
 
 const Footer = () => {
   return (
