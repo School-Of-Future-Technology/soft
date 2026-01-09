@@ -99,7 +99,7 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             AI • Coding • Python • Java • C • C++ • Web Dev • App Dev • Game Dev • GCSE
             <br />
-            <span className="text-foreground font-medium">Grades 7–12 | India • UK • Australia • Singapore • USA</span>
+            <span className="text-foreground font-medium">Grades 7–12 • Engineering | India • UK • Australia • Singapore • USA</span>
           </p>
 
           {/* CTA Buttons */}
