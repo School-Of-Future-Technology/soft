@@ -114,7 +114,7 @@ const TrustSection = () => {
             { value: "500+", label: "Students Taught" },
             { value: "4-6", label: "Batch Size" },
             { value: "100%", label: "Project-Based" },
-            { value: "5 stars", label: "Parent Rating" },
+            { value: "4.9 stars", label: "Parent Rating" },
           ].map((stat, index) => (
             <div key={index} className="text-center p-6 glass-card">
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{stat.value}</div>

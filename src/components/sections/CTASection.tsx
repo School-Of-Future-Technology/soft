@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Play, Calendar, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const CTASection = () => {
   const { toast } = useToast();
@@ -66,82 +67,88 @@ const CTASection = () => {
             </div>
 
             {/* Right: Form */}
-            <div className="glass-card p-8 glow-effect">
-              <h3 className="text-xl font-semibold mb-6 text-center">Book Your Free Session</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Parent's Name</label>
-                  <Input
-                    placeholder="Enter your name"
-                    value={formData.parentName}
-                    onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                    required
-                    className="bg-secondary/50 border-border/50"
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Child's Grade</label>
-                  <select
-                    value={formData.grade}
-                    onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                    required
-                    className="w-full h-10 px-3 rounded-lg bg-secondary/50 border border-border/50 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  >
-                    <option value="">Select grade</option>
-                    {[7, 8, 9, 10, 11, 12].map((grade) => (
-                      <option key={grade} value={grade}>Grade {grade}</option>
-                    ))}
-                  </select>
-                </div>
-                
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">WhatsApp Number</label>
-                  <Input
-                    type="tel"
-                    placeholder="+91 98765 43210"
-                    value={formData.whatsapp}
-                    onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                    required
-                    className="bg-secondary/50 border-border/50"
-                  />
-                </div>
-                
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block">Preferred Time</label>
-                  <select
-                    value={formData.preferredTime}
-                    onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                    required
-                    className="w-full h-10 px-3 rounded-lg bg-secondary/50 border border-border/50 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  >
-                    <option value="">Select time slot</option>
-                    <option value="morning">Morning (9 AM - 12 PM)</option>
-                    <option value="afternoon">Afternoon (2 PM - 5 PM)</option>
-                    <option value="evening">Evening (5 PM - 8 PM)</option>
-                    <option value="weekend">Weekend Only</option>
-                  </select>
-                </div>
-                
-                <Button asChild variant="hero" size="xl" className="w-full">
-                  <a href={demoFormUrl} target="_blank" rel="noreferrer">
-                    Book Free Session
-                  </a>
-                </Button>
-                
-                <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-2">
-                  <div className="flex items-center gap-1">
-                    <CheckCircle className="w-3 h-3 text-primary" />
-                    <span>100% Free</span>
+            <CardContainer containerClassName="py-0" className="w-full">
+              <CardBody className="h-auto w-full">
+                <CardItem translateZ={18} className="w-full">
+                  <div className="glass-card p-8 glow-effect animated-border">
+                    <h3 className="text-xl font-semibold mb-6 text-center">Book Your Free Session</h3>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div>
+                        <label className="text-sm text-muted-foreground mb-1.5 block">Parent's Name</label>
+                        <Input
+                          placeholder="Enter your name"
+                          value={formData.parentName}
+                          onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
+                          required
+                          className="bg-secondary/50 border-border/50"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="text-sm text-muted-foreground mb-1.5 block">Child's Grade</label>
+                        <select
+                          value={formData.grade}
+                          onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
+                          required
+                          className="w-full h-10 px-3 rounded-lg bg-secondary/50 border border-border/50 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                        >
+                          <option value="">Select grade</option>
+                          {[7, 8, 9, 10, 11, 12].map((grade) => (
+                            <option key={grade} value={grade}>Grade {grade}</option>
+                          ))}
+                        </select>
+                      </div>
+                      
+                      <div>
+                        <label className="text-sm text-muted-foreground mb-1.5 block">WhatsApp Number</label>
+                        <Input
+                          type="tel"
+                          placeholder="+91 98765 43210"
+                          value={formData.whatsapp}
+                          onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                          required
+                          className="bg-secondary/50 border-border/50"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="text-sm text-muted-foreground mb-1.5 block">Preferred Time</label>
+                        <select
+                          value={formData.preferredTime}
+                          onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                          required
+                          className="w-full h-10 px-3 rounded-lg bg-secondary/50 border border-border/50 text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                        >
+                          <option value="">Select time slot</option>
+                          <option value="morning">Morning (9 AM - 12 PM)</option>
+                          <option value="afternoon">Afternoon (2 PM - 5 PM)</option>
+                          <option value="evening">Evening (5 PM - 8 PM)</option>
+                          <option value="weekend">Weekend Only</option>
+                        </select>
+                      </div>
+                      
+                      <Button asChild variant="hero" size="xl" className="w-full">
+                        <a href={demoFormUrl} target="_blank" rel="noreferrer">
+                          Book Free Session
+                        </a>
+                      </Button>
+                      
+                      <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-2">
+                        <div className="flex items-center gap-1">
+                          <CheckCircle className="w-3 h-3 text-primary" />
+                          <span>100% Free</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <CheckCircle className="w-3 h-3 text-primary" />
+                          <span>No commitment</span>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <CheckCircle className="w-3 h-3 text-primary" />
-                    <span>No commitment</span>
-                  </div>
-                </div>
-              </form>
-            </div>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
           </div>
         </div>
       </div>

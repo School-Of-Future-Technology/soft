@@ -1,5 +1,6 @@
 import { Play, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const projects = [
   {
@@ -66,39 +67,44 @@ const ProjectsSection = () => {
         {/* Project Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group glass-card overflow-hidden card-hover cursor-pointer"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Video Placeholder */}
-              <div className={`relative aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                <span className="text-6xl">{project.icon}</span>
-                <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
+            <CardContainer key={index} containerClassName="py-0" className="w-full">
+              <CardBody className="h-auto w-full">
+                <CardItem translateZ={18} className="w-full">
+                  <div
+                    className="group glass-card overflow-hidden card-hover cursor-pointer animated-border"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {/* Video Placeholder */}
+                    <div className={`relative aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                      <span className="text-6xl">{project.icon}</span>
+                      <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                          <Play className="w-6 h-6 text-primary-foreground ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="p-5">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            {project.description}
+                          </p>
+                        </div>
+                        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+                      </div>
+                      <div className="mt-3 inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary text-xs font-medium text-muted-foreground">
+                        {project.tech}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div className="p-5">
-                <div className="flex items-start justify-between gap-2">
-                  <div>
-                    <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {project.description}
-                    </p>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
-                </div>
-                <div className="mt-3 inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary text-xs font-medium text-muted-foreground">
-                  {project.tech}
-                </div>
-              </div>
-            </div>
+                </CardItem>
+              </CardBody>
+            </CardContainer>
           ))}
         </div>
 
