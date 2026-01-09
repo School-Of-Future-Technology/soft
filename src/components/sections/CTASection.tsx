@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const CTASection = () => {
   const { toast } = useToast();
+  const demoFormUrl = "https://forms.gle/8aE7Ht9NmtdY6sdL9";
   const [formData, setFormData] = useState({
     parentName: "",
     grade: "",
@@ -123,8 +124,10 @@ const CTASection = () => {
                   </select>
                 </div>
                 
-                <Button type="submit" variant="hero" size="xl" className="w-full">
-                  Book Free Session
+                <Button asChild variant="hero" size="xl" className="w-full">
+                  <a href={demoFormUrl} target="_blank" rel="noreferrer">
+                    Book Free Session
+                  </a>
                 </Button>
                 
                 <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-2">

@@ -11,13 +11,13 @@ const Footer = () => {
             <img 
               src={planetScholarsLogo} 
               alt="Planet Scholars" 
-              className="h-14 w-auto"
+              className="h-14 w-14 rounded-full object-cover"
             />
             <div className="h-10 w-px bg-border/50" />
             <img 
               src={youngThinksLogo} 
               alt="Young Thinks - Parent Company" 
-              className="h-10 w-auto"
+              className="h-10 w-10 rounded-full object-cover"
             />
           </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
           <p>© 2025 Planet Scholars. A Young Thinks Venture.</p>
           <p className="mt-1">
-            Teaching AI, Coding & Computer Science to students in USA, UK, Australia & Singapore.
+            Teaching AI, Coding & Computer Science to students in USA, UK, India, Australia & Singapore.
           </p>
         </div>
       </div>

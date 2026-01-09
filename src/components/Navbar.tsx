@@ -5,6 +5,7 @@ import planetScholarsLogo from "@/assets/planet-scholars-logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const demoFormUrl = "https://forms.gle/8aE7Ht9NmtdY6sdL9";
 
   const navLinks = [
     { label: "Programs", href: "#programs" },
@@ -22,7 +23,7 @@ const Navbar = () => {
             <img 
               src={planetScholarsLogo} 
               alt="Planet Scholars" 
-              className="h-12 w-auto"
+              className="h-12 w-12 rounded-full object-cover"
             />
           </a>
 
@@ -44,8 +45,10 @@ const Navbar = () => {
             <Button variant="ghost" size="sm">
               Contact
             </Button>
-            <Button variant="default" size="sm">
-              Book Demo
+            <Button asChild variant="default" size="sm">
+              <a href={demoFormUrl} target="_blank" rel="noreferrer">
+                Book Demo
+              </a>
             </Button>
           </div>
 
@@ -80,8 +83,10 @@ const Navbar = () => {
                 <Button variant="outline" size="sm" className="flex-1">
                   Contact
                 </Button>
-                <Button variant="default" size="sm" className="flex-1">
-                  Book Demo
+                <Button asChild variant="default" size="sm" className="flex-1">
+                  <a href={demoFormUrl} target="_blank" rel="noreferrer">
+                    Book Demo
+                  </a>
                 </Button>
               </div>
             </div>

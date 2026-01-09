@@ -67,19 +67,17 @@ const ClassroomSection = () => {
             </div>
           </div>
 
-          {/* Right: Video Placeholder */}
+          {/* Right: Video */}
           <div className="relative">
             <div className="aspect-video rounded-2xl overflow-hidden glow-effect glass-card">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-cyan-400/10 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 animate-pulse">
-                    <svg className="w-8 h-8 text-primary ml-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <p className="text-muted-foreground text-sm">Watch a real class in action</p>
-                </div>
-              </div>
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/E8XPkqKBy-U"
+                title="Planet Scholars class video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
             
             {/* Floating Elements */}

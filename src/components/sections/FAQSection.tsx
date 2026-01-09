@@ -76,7 +76,7 @@ const FAQSection = () => {
               Reach out to us on WhatsApp and we'll get back to you within hours.
             </p>
             <a
-              href="https://wa.me/919999999999"
+              href="https://chat.whatsapp.com/LiAko3R5Lf41uQuVo0VVbr"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
