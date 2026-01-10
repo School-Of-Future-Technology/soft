@@ -12,7 +12,7 @@ const Book = () => {
               Adventure With Python
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
-              Chapter 5: Loops - Lab Of Rhythm
+              Chapter 5: Loops - Lab Of Rhythm (SAMPLE)
             </p>
           </div>
         </div>
