@@ -92,7 +92,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.1s' }}>
             We don't just teach coding.
             <br />
-            <span className="gradient-text">We help children BUILD with AI.</span>
+            <span className="gradient-text">We help students BUILD with AI.</span>
           </h1>
 
           {/* Subtext */}
