@@ -3,10 +3,10 @@ import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 const testimonials = [
   {
     quote:
-      "My son was always interested in games but never knew how to make them. After just 6 weeks, he built his first game! The teachers are incredibly patient.",
-    name: "Priya S.",
-    designation: "Parent of Grade 9 Student",
-    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2000&auto=format&fit=crop",
+      "My 19-year-old son is learning Python and AI with Planet Scholars, and his confidence grows every week as he builds real projects. He’s currently creating a neural network to predict whether a person may have diabetes, which has been truly impressive to see.",
+    name: "Wendy",
+    designation: "Parent of 19-year-old Student",
+    src: "/Wendy.png",
   },
   {
     quote:
