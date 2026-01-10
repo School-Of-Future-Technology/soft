@@ -1,40 +1,41 @@
-import { Star, Quote } from "lucide-react";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 const testimonials = [
   {
-    type: "parent",
+    quote:
+      "My son was always interested in games but never knew how to make them. After just 6 weeks, he built his first game! The teachers are incredibly patient.",
     name: "Priya S.",
-    role: "Parent of Grade 9 Student",
-    content: "My son was always interested in games but never knew how to make them. After just 6 weeks, he built his first game! The teachers are incredibly patient.",
-    rating: 5,
+    designation: "Parent of Grade 9 Student",
+    src: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2000&auto=format&fit=crop",
   },
   {
-    type: "parent",
+    quote:
+      "The GCSE Computer Science prep is excellent. My daughter's confidence has grown tremendously. The small batch size makes all the difference.",
     name: "David M.",
-    role: "Parent of Grade 8 Student (UK)",
-    content: "The GCSE Computer Science prep is excellent. My daughter's confidence has grown tremendously. The small batch size makes all the difference.",
-    rating: 5,
+    designation: "Parent of Grade 8 Student (UK)",
+    src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop",
   },
   {
-    type: "student",
+    quote:
+      "I built an AI chatbot that actually works! My friends couldn't believe I made it myself. The instructors explain everything so clearly.",
     name: "Arjun K.",
-    role: "Grade 10 Student",
-    content: "I built an AI chatbot that actually works! My friends couldn't believe I made it myself. The instructors explain everything so clearly.",
-    rating: 5,
+    designation: "Grade 10 Student",
+    src: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop",
   },
   {
-    type: "parent",
+    quote:
+      "What I love is they don't just teach coding — they teach problem-solving. My child now approaches homework differently too!",
     name: "Sneha R.",
-    role: "Parent of Grade 7 Student",
-    content: "What I love is they don't just teach coding — they teach problem-solving. My child now approaches homework differently too!",
-    rating: 5,
+    designation: "Parent of Grade 7 Student",
+    src: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=2000&auto=format&fit=crop",
   },
 ];
 
 const whatsappMessages = [
   {
     sender: "Parent",
-    message: "Thank you so much for the extra session yesterday! He finally understood recursion 🙏",
+    message:
+      "Thank you so much for the extra session yesterday! He finally understood recursion.",
     time: "Today",
   },
   {
@@ -59,47 +60,7 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Main Testimonials Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="glass-card p-6 card-hover relative"
-              >
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
-                
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
-                </div>
-                
-                {/* Content */}
-                <p className="text-foreground mb-4 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-                
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-cyan-400/30 flex items-center justify-center">
-                    <span className="text-sm font-semibold">{testimonial.name.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                  <span className={`ml-auto px-2 py-1 rounded text-xs ${
-                    testimonial.type === 'parent' 
-                      ? 'bg-blue-500/10 text-blue-400' 
-                      : 'bg-green-500/10 text-green-400'
-                  }`}>
-                    {testimonial.type === 'parent' ? 'Parent' : 'Student'}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <AnimatedTestimonials testimonials={testimonials} />
 
           {/* WhatsApp Style Messages */}
           <div className="max-w-md mx-auto">
