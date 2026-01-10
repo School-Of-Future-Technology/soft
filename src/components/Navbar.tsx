@@ -6,6 +6,8 @@ import planetScholarsLogo from "@/assets/planet-scholars-logo.jpg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const demoFormUrl = "https://forms.gle/8aE7Ht9NmtdY6sdL9";
+  const bookUrl =
+    "https://drive.google.com/file/d/12YGFeNgtFEfKc0S9RWDpCPZAwAuvG-0u/view?usp=sharing";
 
   const navLinks = [
     { label: "Programs", href: "#programs" },
@@ -38,6 +40,14 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <a
+              href={bookUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="ring-badge relative inline-flex items-center rounded-full bg-secondary/70 px-3 py-1.5 text-xs font-semibold tracking-wide text-foreground transition-colors hover:bg-secondary"
+            >
+              our book: Adventure With Python
+            </a>
           </div>
 
           {/* CTA */}
@@ -79,6 +89,14 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={bookUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="ring-badge mx-4 inline-flex items-center justify-center rounded-full bg-secondary/70 px-3 py-2 text-xs font-semibold tracking-wide text-foreground transition-colors hover:bg-secondary"
+              >
+                our book: Adventure With Python
+              </a>
               <div className="flex gap-2 px-4 pt-4 border-t border-border/50 mt-2">
                 <Button variant="outline" size="sm" className="flex-1">
                   Contact
