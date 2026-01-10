@@ -5,10 +5,10 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const instructors = [
   {
-    name: "Akshat Sinha",
-    role: "Founder, Young Thinks",
-    credentials: "Mathematics & STEM Educator",
-    bio: "At Young Thinks, our mission is to strengthen students’ foundations in Maths, Science, Coding, and AI. As a Maths educator and founder, I focus on helping learners develop clarity in concepts, confidence in problem-solving, and curiosity for STEM. We want every student to feel capable and excited about the technologies shaping their future.",
+    name: "Akshat Mehta",
+    role: "Founder, Young Thinks & Planet Scholars",
+    credentials: "B.Tech and M.Tech IIT Bombay",
+    bio: "Our mission is to strengthen students’ foundations in Maths, Science, Coding, and AI. As a Maths educator and founder, I focus on helping learners develop clarity in concepts, confidence in problem-solving, and curiosity for STEM. We want every student to feel capable and excited about the technologies shaping their future.",
     imageUrl: akshatImage,
     icon: GraduationCap,
     resumeUrl: "#",
