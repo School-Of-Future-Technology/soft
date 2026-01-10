@@ -50,6 +50,12 @@ const TrustSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
+          <Link
+            to="/book"
+            className="ring-badge mx-auto mb-6 inline-flex items-center justify-center rounded-full bg-secondary/70 px-5 py-2.5 text-sm font-semibold tracking-wide text-foreground transition-colors hover:bg-secondary"
+          >
+            our book: Adventure With Python
+          </Link>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Learn from <span className="gradient-text">Industry Experts</span>
           </h2>
@@ -123,12 +129,6 @@ const TrustSection = () => {
 
         {/* Tech Stack */}
         <div className="text-center">
-          <Link
-            to="/book"
-            className="ring-badge mx-auto mb-6 inline-flex items-center justify-center rounded-full bg-secondary/70 px-5 py-2.5 text-sm font-semibold tracking-wide text-foreground transition-colors hover:bg-secondary"
-          >
-            our book: Adventure With Python
-          </Link>
           <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">Technologies We Teach</p>
           <div className="flex flex-wrap justify-center gap-4">
             {techLogos.map((tech, index) => (
