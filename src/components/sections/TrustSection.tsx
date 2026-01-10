@@ -2,26 +2,26 @@ import { GraduationCap } from "lucide-react";
 import akashImage from "@/assets/akash_.png";
 import akshatImage from "@/assets/akshat3.png";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { Link } from "react-router-dom";
 
 const instructors = [
   {
+    id: "akshat",
     name: "Akshat Mehta",
     role: "Founder, Young Thinks & Planet Scholars",
     credentials: "B.Tech and M.Tech IIT Bombay",
     bio: "Our mission is to strengthen students’ foundations in Maths, Science, Coding, and AI. As a Maths educator and founder, I focus on helping learners develop clarity in concepts, confidence in problem-solving, and curiosity for STEM. We want every student to feel capable and excited about the technologies shaping their future.",
     imageUrl: akshatImage,
     icon: GraduationCap,
-    resumeUrl: "#",
     initials: "CH",
   },
   {
+    id: "akash",
     name: "Akash Kumar Roy",
     role: "Software & AI Engineer",
     credentials: "GATE All India Rank 3462 (CSE)",
     bio: "As a Software and AI Engineer, I believe every student should learn how to think, create, and solve problems using technology. I combine real industry knowledge with step-by-step teaching to ensure students not only learn Python and AI, but also build meaningful projects that make them proud.",
     imageUrl: akashImage,
-    resumeUrl:
-      "https://docs.google.com/document/d/1tkIDsT3f3R434t30j3xGCunVFfnqEb6k/edit?usp=sharing&ouid=100451372069929798051&rtpof=true&sd=true",
   },
 ];
 
@@ -91,14 +91,12 @@ const TrustSection = () => {
                         {instructor.bio && (
                           <p className="text-muted-foreground text-sm mt-3">{instructor.bio}</p>
                         )}
-                        <a
-                          href={instructor.resumeUrl}
-                          target="_blank"
-                          rel="noreferrer"
+                        <Link
+                          to={`/resume?id=${instructor.id}`}
                           className="inline-flex mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                         >
-                          View resume (PDF)
-                        </a>
+                          View resume
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -125,14 +123,12 @@ const TrustSection = () => {
 
         {/* Tech Stack */}
         <div className="text-center">
-          <a
-            href="https://drive.google.com/file/d/12YGFeNgtFEfKc0S9RWDpCPZAwAuvG-0u/view?usp=sharing"
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to="/book"
             className="ring-badge mx-auto mb-6 inline-flex items-center justify-center rounded-full bg-secondary/70 px-5 py-2.5 text-sm font-semibold tracking-wide text-foreground transition-colors hover:bg-secondary"
           >
             our book: Adventure With Python
-          </a>
+          </Link>
           <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">Technologies We Teach</p>
           <div className="flex flex-wrap justify-center gap-4">
             {techLogos.map((tech, index) => (
