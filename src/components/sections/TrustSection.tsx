@@ -18,7 +18,7 @@ const instructors = [
   {
     id: "akash",
     name: "Akash Kumar Roy",
-    role: "Software & AI Engineer",
+    role: "Software & AI Engineer, Lead Instructor",
     credentials: "GATE All India Rank 3462 (CSE)",
     bio: "As a Software and AI Engineer, I believe every student should learn how to think, create, and solve problems using technology. I combine real industry knowledge with step-by-step teaching to ensure students not only learn Python and AI, but also build meaningful projects that make them proud.",
     imageUrl: akashImage,
