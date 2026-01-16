@@ -8,6 +8,7 @@ const projects = [
     description: "Built by a Grade 8 student in 4 weeks",
     tech: "Python + OpenAI API",
     gradient: "from-cyan-500/20 to-blue-500/20",
+    url: "https://www.youtube.com/embed/2gKKifs16LY?si=Je0TjtppWNBFQjHc",
     icon: "🎨",
   },
   {
@@ -18,10 +19,11 @@ const projects = [
     icon: "🤖",
   },
   {
-    title: "Snake Game",
+    title: "Flappy Bird Game",
     description: "Built by a Grade 7 student in 2 weeks",
     tech: "Python + Pygame",
     gradient: "from-green-500/20 to-emerald-500/20",
+    url: "https://www.youtube.com/embed/6ChQ38pl454?si=i626caKEDiw1g5GV",
     icon: "🎮",
   },
   {
@@ -70,38 +72,74 @@ const ProjectsSection = () => {
             <CardContainer key={index} containerClassName="py-0" className="w-full">
               <CardBody className="h-auto w-full">
                 <CardItem translateZ={18} className="w-full">
-                  <div
-                    className="group glass-card overflow-hidden card-hover cursor-pointer animated-border"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {/* Video Placeholder */}
-                    <div className={`relative aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
-                      <span className="text-6xl">{project.icon}</span>
-                      <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                          <Play className="w-6 h-6 text-primary-foreground ml-1" />
+                  {project.url ? (
+                    <div
+                      className="group glass-card overflow-hidden card-hover animated-border"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Video Embed */}
+                      <div className="relative aspect-video overflow-hidden">
+                        <iframe
+                          className="absolute inset-0 h-full w-full"
+                          src={project.url}
+                          title={`${project.title} video`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-5">
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {project.description}
+                            </p>
+                          </div>
+                          <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+                        </div>
+                        <div className="mt-3 inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary text-xs font-medium text-muted-foreground">
+                          {project.tech}
                         </div>
                       </div>
                     </div>
-                    
-                    {/* Content */}
-                    <div className="p-5">
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
-                            {project.title}
-                          </h3>
-                          <p className="text-sm text-muted-foreground mt-1">
-                            {project.description}
-                          </p>
+                  ) : (
+                    <div
+                      className="group glass-card overflow-hidden card-hover cursor-pointer animated-border"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Video Placeholder */}
+                      <div className={`relative aspect-video bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                        <span className="text-6xl">{project.icon}</span>
+                        <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                            <Play className="w-6 h-6 text-primary-foreground ml-1" />
+                          </div>
                         </div>
-                        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
                       </div>
-                      <div className="mt-3 inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary text-xs font-medium text-muted-foreground">
-                        {project.tech}
+                      
+                      {/* Content */}
+                      <div className="p-5">
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                              {project.title}
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {project.description}
+                            </p>
+                          </div>
+                          <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+                        </div>
+                        <div className="mt-3 inline-flex items-center gap-1 px-2 py-1 rounded bg-secondary text-xs font-medium text-muted-foreground">
+                          {project.tech}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </CardItem>
               </CardBody>
             </CardContainer>
