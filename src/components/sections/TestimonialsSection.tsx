@@ -71,6 +71,13 @@ const whatsappMessages = [
     videoUrl: "https://www.youtube.com/embed/WFRjQBy2VMU",
   },
   {
+    sender: "Alif and his mother",
+    message: "Alif and his mother speaking about classes.",
+    time: "Oct 2025",
+    className: "absolute top-60 left-[60%] rotate-[-4deg]",
+    videoUrl: "https://www.youtube.com/embed/tPAYysHmLbQ",
+  },
+  {
     sender: "Adhrit on our book",
     message:
       "Sir, I really enjoyed reading it. It was not only easy to understand, but also very creative and interesting. The story format with characters like Aryan, Rhea, and Vayun made it feel like an adventure, not just a coding lesson.\n\nWhat I loved most:\nThe magical and fun storytelling made loops feel exciting.\nVisuals and examples like the lanterns and hammer helped me understand the difference between for and while loops easily.",
