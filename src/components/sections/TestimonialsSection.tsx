@@ -68,7 +68,7 @@ const whatsappMessages = [
     message: "Video Review From Classroom",
     time: "Jan 2026",
     className: "absolute top-12 left-[52%] rotate-[3deg]",
-    videoUrl: "https://www.youtube.com/embed/WFRjQBy2VMU",
+    videoUrl: "https://www.youtube.com/embed/ftztWyIQ3xM",
   },
   {
     sender: "Alif and his mother",
