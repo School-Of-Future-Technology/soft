@@ -64,6 +64,13 @@ const whatsappMessages = [
       "https://cdn.jsdelivr.net/gh/schooloffuturetechnology-wq/website-assets@main/Aarush.png",
   },
   {
+    sender: "Daksheena, 3rd year, Cardiff University, USA",
+    message: "Video Review From Classroom",
+    time: "Jan 2026",
+    className: "absolute top-12 left-[52%] rotate-[3deg]",
+    videoUrl: "https://www.youtube.com/embed/WFRjQBy2VMU",
+  },
+  {
     sender: "Adhrit on our book",
     message:
       "Sir, I really enjoyed reading it. It was not only easy to understand, but also very creative and interesting. The story format with characters like Aryan, Rhea, and Vayun made it feel like an adventure, not just a coding lesson.\n\nWhat I loved most:\nThe magical and fun storytelling made loops feel exciting.\nVisuals and examples like the lanterns and hammer helped me understand the difference between for and while loops easily.",
@@ -71,25 +78,7 @@ const whatsappMessages = [
     className: "absolute top-10 right-[18%] rotate-[6deg]",
     image:
       "https://cdn.jsdelivr.net/gh/schooloffuturetechnology-wq/website-assets@main/adhrit.jpeg",
-  },
-  {
-    sender: "Parent",
-    message: "She showed her AI project at school today and her teacher was amazed!",
-    time: "Yesterday",
-    className: "absolute top-32 left-[28%] rotate-[-6deg]",
-  },
-  {
-    sender: "Student",
-    message: "I shared my chatbot demo with friends and they loved it!",
-    time: "2 days ago",
-    className: "absolute top-10 right-[20%] rotate-[-7deg]",
-  },
-  {
-    sender: "Parent",
-    message: "The class recording helped her catch up quickly. Thank you!",
-    time: "Last week",
-    className: "absolute top-40 right-[6%] rotate-[4deg]",
-  },
+  }
 ];
 
 const TestimonialsSection = () => {
@@ -122,7 +111,22 @@ const TestimonialsSection = () => {
                   dragElastic={0.35}
                 >
                   <div className="flex h-full flex-col justify-between">
-                    {msg.image ? (
+                    {msg.videoUrl ? (
+                      <div className="space-y-3">
+                        <div className="relative aspect-[9/16] w-full overflow-hidden rounded-md">
+                          <iframe
+                            className="absolute inset-0 h-full w-full"
+                            src={msg.videoUrl}
+                            title={`${msg.sender} video`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          />
+                        </div>
+                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
+                          {msg.message}
+                        </p>
+                      </div>
+                    ) : msg.image ? (
                       <div className="space-y-3">
                         <div className="overflow-hidden rounded-md">
                           <img
