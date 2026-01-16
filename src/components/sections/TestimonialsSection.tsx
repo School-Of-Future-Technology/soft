@@ -3,7 +3,6 @@ import {
   DraggableCardBody,
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
-import { useRef } from "react";
 import rishanFeedback from "@/assets/Rishan_feedback_.png";
 
 const testimonials = [
@@ -47,6 +46,24 @@ const whatsappMessages = [
     image: rishanFeedback,
   },
   {
+    sender: "Nivaan's Father Raj",
+    message:
+      "Hi Akash and Nis, wishing you both a very Happy New Year and continued success on your journey ahead. It's truly wonderful to have mentors like you guiding Nevan.",
+    time: "Jan 2026",
+    className: "absolute top-44 left-[10%] rotate-[5deg]",
+    image:
+      "https://cdn.jsdelivr.net/gh/schooloffuturetechnology-wq/website-assets@main/nivaan_.png",
+  },
+  {
+    sender: "Aarush's Mother",
+    message:
+      "Ok sir. I am happy that he got chance to learn from you. Thanks for understand him. Many times teacher doesn't like they take in negative way. ❤️",
+    time: "Jan 2026",
+    className: "absolute top-52 right-[12%] rotate-[-5deg]",
+    image:
+      "https://cdn.jsdelivr.net/gh/schooloffuturetechnology-wq/website-assets@main/Aarush.png",
+  },
+  {
     sender: "Adhrit on our book",
     message:
       "Sir, I really enjoyed reading it. It was not only easy to understand, but also very creative and interesting. The story format with characters like Aryan, Rhea, and Vayun made it feel like an adventure, not just a coding lesson.\n\nWhat I loved most:\nThe magical and fun storytelling made loops feel exciting.\nVisuals and examples like the lanterns and hammer helped me understand the difference between for and while loops easily.",
@@ -76,8 +93,6 @@ const whatsappMessages = [
 ];
 
 const TestimonialsSection = () => {
-  const whatsappContainerRef = useRef<HTMLDivElement>(null);
-
   return (
     <section className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -99,15 +114,12 @@ const TestimonialsSection = () => {
             <p className="text-center text-sm text-muted-foreground mb-4 uppercase tracking-wider">
               From our WhatsApp groups
             </p>
-            <DraggableCardContainer
-              className="relative mx-auto flex min-h-[560px] w-full max-w-4xl items-center justify-center overflow-clip"
-              ref={whatsappContainerRef}
-            >
+            <DraggableCardContainer className="relative mx-auto flex min-h-[560px] w-full max-w-4xl items-center justify-center overflow-visible">
               {whatsappMessages.map((msg, index) => (
                 <DraggableCardBody
                   key={`${msg.sender}-${index}`}
                   className={msg.className}
-                  dragConstraints={whatsappContainerRef}
+                  dragElastic={0.35}
                 >
                   <div className="flex h-full flex-col justify-between">
                     {msg.image ? (

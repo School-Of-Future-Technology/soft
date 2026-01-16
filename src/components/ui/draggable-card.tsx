@@ -16,10 +16,12 @@ export const DraggableCardBody = ({
   className,
   children,
   dragConstraints,
+  dragElastic,
 }: {
   className?: string;
   children?: React.ReactNode;
   dragConstraints?: React.RefObject<Element>;
+  dragElastic?: number;
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -115,6 +117,7 @@ export const DraggableCardBody = ({
       ref={cardRef}
       drag
       dragConstraints={dragConstraints ?? constraints}
+      dragElastic={dragElastic}
       onDragStart={() => {
         document.body.style.cursor = "grabbing";
       }}
