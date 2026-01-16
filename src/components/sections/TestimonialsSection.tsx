@@ -101,9 +101,9 @@ const TestimonialsSection = () => {
           {/* WhatsApp Style Messages */}
           <div className="mx-auto">
             <p className="text-center text-sm text-muted-foreground mb-4 uppercase tracking-wider">
-              From our WhatsApp groups
+              From our WhatsApp groups and classes
             </p>
-            <DraggableCardContainer className="relative mx-auto flex min-h-[560px] w-full max-w-4xl items-center justify-center overflow-visible">
+            <DraggableCardContainer className="relative mx-auto flex min-h-[560px] w-full max-w-4xl items-center justify-center overflow-x-visible overflow-y-hidden">
               {whatsappMessages.map((msg, index) => (
                 <DraggableCardBody
                   key={`${msg.sender}-${index}`}
