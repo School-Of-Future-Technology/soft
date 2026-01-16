@@ -4,9 +4,9 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const projects = [
   {
-    title: "AI Image Generator",
+    title: "Weather App",
     description: "Built by a Grade 8 student in 4 weeks",
-    tech: "Python + OpenAI API",
+    tech: "Python + Open Weather Map API",
     gradient: "from-cyan-500/20 to-blue-500/20",
     url: "https://www.youtube.com/embed/2gKKifs16LY?si=Je0TjtppWNBFQjHc",
     icon: "🎨",
