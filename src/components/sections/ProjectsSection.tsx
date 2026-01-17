@@ -42,7 +42,7 @@ const projects = [
   },
   {
     title: "ML Prediction App",
-    description: "Built by a Grade 11 student in 6 weeks",
+    description: "Built by 2nd year engineering student in 6 weeks",
     tech: "Python + Scikit-learn",
     gradient: "from-red-500/20 to-rose-500/20",
     icon: "🧠",
