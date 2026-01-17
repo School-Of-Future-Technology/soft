@@ -97,12 +97,13 @@ const TrustSection = () => {
                         {instructor.bio && (
                           <p className="text-muted-foreground text-sm mt-3">{instructor.bio}</p>
                         )}
-                        <Link
-                          to={`/resume?id=${instructor.id}`}
-                          className="inline-flex mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                        <span
+                          className="inline-flex mt-4 text-sm font-medium text-muted-foreground cursor-not-allowed"
+                          aria-disabled="true"
+                          title="Resume will be available soon"
                         >
                           View resume
-                        </Link>
+                        </span>
                       </div>
                     </div>
                   </div>

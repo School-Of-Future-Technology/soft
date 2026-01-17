@@ -4,10 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Play, Calendar, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { useNavigate } from "react-router-dom";
 
 const CTASection = () => {
   const { toast } = useToast();
-  const demoFormUrl = "https://forms.gle/8aE7Ht9NmtdY6sdL9";
+  const navigate = useNavigate();
+  const web3FormsEndpoint = "https://api.web3forms.com/submit";
+  const web3FormsAccessKey = "9b4ddfef-b36f-4588-a3dc-ae13409338f0";
   const [formData, setFormData] = useState({
     parentName: "",
     grade: "",
@@ -15,13 +18,51 @@ const CTASection = () => {
     preferredTime: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Request Received! 🎉",
-      description: "We'll contact you within 24 hours to schedule your free session.",
-    });
-    setFormData({ parentName: "", grade: "", whatsapp: "", preferredTime: "" });
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(web3FormsEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3FormsAccessKey,
+          parent_name: formData.parentName,
+          child_grade: formData.grade,
+          whatsapp_number: formData.whatsapp,
+          preferred_time: formData.preferredTime,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result?.success) {
+        throw new Error("Submission failed");
+      }
+      toast({
+        title: "Request Received!",
+        description:
+          "We'll contact you within 24 hours to schedule your free session.",
+      });
+      setFormData({
+        parentName: "",
+        grade: "",
+        whatsapp: "",
+        preferredTime: "",
+      });
+      navigate("/thank-you");
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again in a moment.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -128,10 +169,14 @@ const CTASection = () => {
                         </select>
                       </div>
                       
-                      <Button asChild variant="hero" size="xl" className="w-full">
-                        <a href={demoFormUrl} target="_blank" rel="noreferrer">
-                          Book Free Session
-                        </a>
+                      <Button
+                        type="submit"
+                        variant="hero"
+                        size="xl"
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Submitting..." : "Book Free Session"}
                       </Button>
                       
                       <div className="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-2">
