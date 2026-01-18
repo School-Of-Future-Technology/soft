@@ -9,6 +9,7 @@ const projects = [
     tech: "Python + Open Weather Map API",
     gradient: "from-cyan-500/20 to-blue-500/20",
     url: "https://www.youtube.com/embed/2gKKifs16LY?si=Je0TjtppWNBFQjHc",
+    disableUrl: true,
     icon: "🎨",
   },
   {
@@ -28,7 +29,7 @@ const projects = [
   },
   {
     title: "Data Dashboard",
-    description: "Built by a Grade 10 student in 5 weeks",
+    description: "Built by a professional student in 5 weeks",
     tech: "Python + Matplotlib",
     gradient: "from-orange-500/20 to-yellow-500/20",
     icon: "📊",
@@ -72,7 +73,7 @@ const ProjectsSection = () => {
             <CardContainer key={index} containerClassName="py-0" className="w-full">
               <CardBody className="h-auto w-full">
                 <CardItem translateZ={18} className="w-full">
-                  {project.url ? (
+                  {project.url && !project.disableUrl ? (
                     <div
                       className="group glass-card overflow-hidden card-hover animated-border"
                       style={{ animationDelay: `${index * 0.1}s` }}
