@@ -8,6 +8,9 @@ import NotFound from "./pages/NotFound";
 import Book from "./pages/Book";
 import Resume from "./pages/Resume";
 import ThankYou from "./pages/ThankYou";
+import Learn from "./pages/Learn";
+import LearnTech from "./pages/LearnTech";
+import LearnFlashcards from "./pages/LearnFlashcards";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +23,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/learn/python/:topic" element={<LearnFlashcards />} />
+          <Route path="/learn/:tech" element={<LearnTech />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/thank-you" element={<ThankYou />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

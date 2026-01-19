@@ -137,6 +137,14 @@
   .section-fade {
     @apply opacity-0 animate-fade-in;
   }
+
+  .value-drop {
+    animation: value-drop 0.9s ease-out forwards;
+  }
+
+  .infinite-drop {
+    animation: bucket-drop 2.2s ease-in-out infinite;
+  }
 }
 
 @keyframes border-shift {
@@ -154,6 +162,43 @@
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes value-drop {
+  0% {
+    transform: translateX(-18px) translateY(-6px) scale(0.95);
+    opacity: 0.6;
+  }
+  60% {
+    transform: translateX(12px) translateY(0px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(12px) translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bucket-drop {
+  0% {
+    transform: translateY(-6px) scale(0.95);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  55% {
+    transform: translateY(74px) scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(64px) scale(0.98);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-6px) scale(0.95);
+    opacity: 0;
   }
 }
 
